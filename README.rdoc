@@ -1,5 +1,11 @@
 == README
 
+Refer to the wiki for many questions.
+We use rubocop as our style guide. You should be running guard to make sure
+that you code is passing the tests as well as conforming to the style guide.
+
+***************************
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
