@@ -25,10 +25,10 @@ class EmailsController < ApplicationController
   # POST /emails.json
   def create
     @email = Email.new(email_params)
-
+    notice = 'Email was successfully created.'
     respond_to do |format|
       if @email.save
-        format.html { redirect_to @email, notice: 'Email was successfully created.' }
+        format.html { redirect_to @email, notice: notice }
         format.json { render :show, status: :created, location: @email }
       else
         format.html { render :new }
@@ -40,9 +40,10 @@ class EmailsController < ApplicationController
   # PATCH/PUT /emails/1
   # PATCH/PUT /emails/1.json
   def update
+    notice = 'Email was successfully updated.'
     respond_to do |format|
       if @email.update(email_params)
-        format.html { redirect_to @email, notice: 'Email was successfully updated.' }
+        format.html { redirect_to @email, notice: notice }
         format.json { render :show, status: :ok, location: @email }
       else
         format.html { render :edit }
@@ -55,20 +56,23 @@ class EmailsController < ApplicationController
   # DELETE /emails/1.json
   def destroy
     @email.destroy
+    notice = 'Email was successfully destroyed.'
     respond_to do |format|
-      format.html { redirect_to emails_url, notice: 'Email was successfully destroyed.' }
+      format.html { redirect_to emails_url, notice: notice }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_email
-      @email = Email.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def email_params
-      params.require(:email).permit(:subject, :body, :send_at, :user_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_email
+    @email = Email.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the
+  # white list through.
+  def email_params
+    params.require(:email).permit(:subject, :body, :send_at, :user_id)
+  end
 end
