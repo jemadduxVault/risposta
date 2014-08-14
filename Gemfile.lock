@@ -116,6 +116,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.1.1)
       json (~> 1.4)
+    ruby-prof (0.15.1)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -175,6 +176,7 @@ DEPENDENCIES
   jquery-rails
   rack-mini-profiler
   rails (= 4.1.4)
+  ruby-prof
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   simplecov

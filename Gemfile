@@ -40,6 +40,7 @@ end
 group :test do
   gem 'simplecov', :require => false
   # gem 'sqlite3'
+  gem 'ruby-prof'
   gem 'guard-minitest', require: false
 end
 
