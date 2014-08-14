@@ -28,6 +28,7 @@ gem 'unicorn'
 
 group :development do
   gem 'spring'
+  gem 'guard-rubocop'
 end
 
 group :development, :test do
