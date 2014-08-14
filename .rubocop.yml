@@ -10,6 +10,12 @@
 StringLiterals:
   Enabled: false
 
+AllCops:
+  Excludes:
+    - config/unicorn.rb
+    - db/**
+  RunRailsCops: true
+
 # ###########################
 # # Configuration for rubocop
 # #
